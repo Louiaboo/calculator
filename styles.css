@@ -6,33 +6,29 @@ body {
 }
 
 .container {
-    display: flex;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr;
     flex-direction: column;
     align-items: center;
     border: 1px black solid;
+    height: 450px;
+    width: 310px;
 }
 
 .screen {
-    min-height: 40px;
-    min-width: 300px;
+    min-height: 150px;
     border: 3px black solid;
     border-radius: 9px;
-    margin-bottom: 5px;
     background-color: aqua;
     color: darkcyan;
 }
 
 .button-container {
-    display: flex;
-}
-
-.input-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.number-container {
     display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px black solid;
 }
 
 .number {
