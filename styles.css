@@ -31,5 +31,38 @@ body {
     border: 1px black solid;
 }
 
-.number {
+.clear {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column: span 2;
+}
+
+.divide {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.multiply {
+    grid-column-start: 4;
+    grid-row-start: 1;
+}
+
+.minus {
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+
+.plus {
+    grid-column-start: 4;
+    grid-row-start: 3;
+}
+
+.equals {
+    grid-column-start: 4;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.zero {
+    grid-column: span 2;
 }
