@@ -18,6 +18,7 @@ const divide = document.querySelector(".divide");
 const equals = document.querySelector(".equals");
 const numbers = document.querySelectorAll(".number");
 const input = document.querySelector(".input");
+const operator = document.querySelectorAll(".operator");
 
 let num1 = 0;
 let num2 = [];
@@ -34,5 +35,13 @@ for (let i = 0; i < numbers.length - 1; i++) {
 
 dot.addEventListener("click", function() {
     inputNumber(".");
-    dot.disabled = "true";
+    dot.disabled = true;
+});
+
+clear.addEventListener("click", () => {
+    num1 = 0;
+    num2 = [];
+    input.textContent = num1;
+    operationNumber = 0;
+    dot.disabled = false;
 });
