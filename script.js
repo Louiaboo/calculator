@@ -16,3 +16,23 @@ const minus = document.querySelector(".minus");
 const multiply = document.querySelector(".multiply");
 const divide = document.querySelector(".divide");
 const equals = document.querySelector(".equals");
+const numbers = document.querySelectorAll(".number");
+const input = document.querySelector(".input");
+
+let num1 = 0;
+let num2 = [];
+
+function inputNumber(buttonNumber) {
+    num2.push(buttonNumber);
+    input.textContent = num2.join("");
+}
+
+for (let i = 0; i < numbers.length - 1; i++) {
+    numbers[i].addEventListener("click", function () {
+        inputNumber(parseInt(numbers[i].textContent))});
+}
+
+dot.addEventListener("click", function() {
+    inputNumber(".");
+    dot.disabled = "true";
+});
