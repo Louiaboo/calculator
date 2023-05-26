@@ -1,14 +1,4 @@
 const screen = document.querySelector(".screen");
-const nine = document.querySelector(".nine");
-const eight = document.querySelector(".eight");
-const seven = document.querySelector(".seven");
-const six = document.querySelector(".six");
-const five = document.querySelector(".five");
-const four = document.querySelector("four");
-const three = document.querySelector("three");
-const two = document.querySelector("two");
-const one = document.querySelector("one");
-const zero = document.querySelector("zero");
 const dot = document.querySelector(".dot");
 const clear = document.querySelector(".clear");
 const plus = document.querySelector(".plus");
@@ -28,7 +18,7 @@ function inputNumber(buttonNumber) {
     input.textContent = num2.join("");
 }
 
-for (let i = 0; i < numbers.length - 1; i++) {
+for (let i = 0; i < numbers.length; i++) {
     numbers[i].addEventListener("click", function () {
         inputNumber(parseInt(numbers[i].textContent))});
 }
@@ -37,6 +27,50 @@ dot.addEventListener("click", function() {
     inputNumber(".");
     dot.disabled = true;
 });
+
+function floatCheck(numArray) {
+    if (numArray.includes(".")) {
+        return parseFloat(numArray.join(""));
+    } else {
+        return parseInt(numArray.join(""));
+    }
+}
+
+function floatToIntCheck(number) {
+    if (number % 1 != 0) {
+        return Math.floor(number);
+    } else {
+        return number;
+    }
+}
+
+// function operate(operation) {
+//     if (operation === "+") {
+//         num1 += floatCheck(num2);
+//     } else if (operation === "-") {
+//         num1 -= floatCheck(num2);
+//     } else if (operation === "*") {
+//         num1 *= floatCheck(num2);
+//     } else if (operation === "/") {
+//         num1 /= floatCheck(num2);
+//     }
+//     num2 = [];
+//     console.log(num1);
+// }
+
+let firstOperation = true;
+for (let j = 0; j < operator.length; j++) {
+    operator[j].addEventListener("click", () => {
+        dot.disabled = false;
+        if (firstOperation) {
+            num1 = floatCheck(num2);
+            num2 = [];
+            firstOperation = false;
+        } else {
+            // operate(operator[j]);
+        }
+    });
+}
 
 clear.addEventListener("click", () => {
     num1 = 0;
