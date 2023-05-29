@@ -37,26 +37,30 @@ function floatCheck(numArray) {
 }
 
 function floatToIntCheck(number) {
-    if (number % 1 != 0) {
+    if (number % 1 == 0) {
         return Math.floor(number);
     } else {
         return number;
     }
 }
 
-// function operate(operation) {
-//     if (operation === "+") {
-//         num1 += floatCheck(num2);
-//     } else if (operation === "-") {
-//         num1 -= floatCheck(num2);
-//     } else if (operation === "*") {
-//         num1 *= floatCheck(num2);
-//     } else if (operation === "/") {
-//         num1 /= floatCheck(num2);
-//     }
-//     num2 = [];
-//     console.log(num1);
-// }
+let currentOperation;
+
+function operate(operation) {
+    if (num2.length > 0) {
+        if (operation === "+") {
+            num1 = floatToIntCheck(num1 += floatCheck(num2));
+        } else if (operation === "-") {
+            num1 = floatToIntCheck(num1 -= floatCheck(num2));
+        } else if (operation === "*") {
+            num1 = floatToIntCheck(num1 *= floatCheck(num2));
+        } else if (operation === "/") {
+            num1 = floatToIntCheck(num1 /= floatCheck(num2));
+        }
+    }
+    num2 = [];
+    console.log(num1);
+}
 
 let firstOperation = true;
 for (let j = 0; j < operator.length; j++) {
@@ -66,16 +70,22 @@ for (let j = 0; j < operator.length; j++) {
             num1 = floatCheck(num2);
             num2 = [];
             firstOperation = false;
+            currentOperation = operator[j].textContent;
         } else {
-            // operate(operator[j]);
+            operate(currentOperation);
+            currentOperation = operator[j].textContent;
         }
     });
 }
+
+equals.addEventListener("click", () => {
+    operate(currentOperation);
+});
 
 clear.addEventListener("click", () => {
     num1 = 0;
     num2 = [];
     input.textContent = num1;
-    operationNumber = 0;
+    firstOperation = true;
     dot.disabled = false;
 });
