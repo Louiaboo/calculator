@@ -1,68 +1,68 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
-    display: grid;
-    gap: 0px;
-    grid-template-columns: 1fr;
-    flex-direction: column;
-    align-items: center;
-    border: 1px black solid;
-    height: 450px;
-    width: 310px;
+  display: grid;
+  gap: 0px;
+  grid-template-columns: 1fr;
+  flex-direction: column;
+  align-items: center;
+  border: 1px black solid;
+  height: 450px;
+  width: 310px;
 }
 
 .screen {
-    min-height: 150px;
-    border: 3px black solid;
-    border-radius: 9px;
-    background-color: aqua;
-    color: darkcyan;
+  min-height: 150px;
+  border: 3px black solid;
+  border-radius: 9px;
+  background-color: aqua;
+  color: darkcyan;
 }
 
 .button-container {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px black solid;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px black solid;
 }
 
 .clear {
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-column: span 2;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column: span 2;
 }
 
 .divide {
-    grid-column-start: 3;
-    grid-row-start: 1;
+  grid-column-start: 3;
+  grid-row-start: 1;
 }
 
 .multiply {
-    grid-column-start: 4;
-    grid-row-start: 1;
+  grid-column-start: 4;
+  grid-row-start: 1;
 }
 
 .minus {
-    grid-column-start: 4;
-    grid-row-start: 2;
+  grid-column-start: 4;
+  grid-row-start: 2;
 }
 
 .plus {
-    grid-column-start: 4;
-    grid-row-start: 3;
+  grid-column-start: 4;
+  grid-row-start: 3;
 }
 
 .equals {
-    grid-column-start: 4;
-    grid-row-start: 4;
-    grid-row-end: 6;
+  grid-column-start: 4;
+  grid-row-start: 4;
+  grid-row-end: 6;
 }
 
 .zero {
-    grid-column: span 2;
+  grid-column: span 2;
 }
