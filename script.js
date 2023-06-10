@@ -6,6 +6,7 @@ const minus = document.querySelector(".minus");
 const multiply = document.querySelector(".multiply");
 const divide = document.querySelector(".divide");
 const equals = document.querySelector(".equals");
+const number = document.querySelector(".number");
 const numbers = document.querySelectorAll(".number");
 const input = document.querySelector(".input");
 const operator = document.querySelectorAll(".operator");
@@ -16,15 +17,23 @@ let num2 = [];
 function inputNumber(buttonNumber) {
   num2.push(buttonNumber);
   input.textContent = num2.join("");
+  console.log(num2);
 }
 
 for (let i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener("click", function () {
-    inputNumber(parseInt(numbers[i].textContent));
+    if (num2.length > 8) {
+      number.disabled = true;
+    } else {
+      inputNumber(parseInt(numbers[i].textContent));
+    }
   });
 }
 
 dot.addEventListener("click", function () {
+  if (num2.length === 0) {
+    inputNumber("0");
+  }
   inputNumber(".");
   dot.disabled = true;
 });
@@ -76,6 +85,7 @@ for (let j = 0; j < operator.length; j++) {
       operate(currentOperation);
       currentOperation = operator[j].textContent;
     }
+    number.disabled = false;
   });
 }
 
@@ -89,4 +99,5 @@ clear.addEventListener("click", () => {
   input.textContent = num1;
   firstOperation = true;
   dot.disabled = false;
+  number.disabled = false;
 });
