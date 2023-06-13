@@ -36,9 +36,17 @@ body {
   align-items: end;
 }
 
+.log {
+  color: #3c3836;
+  margin: 0px;
+  margin-right: 6px;
+  padding: 0px;
+}
+
 .input {
   font-size: 60px;
   margin: 0px;
+  margin-right: 4px;
   padding: 0px;
 }
 
