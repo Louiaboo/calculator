@@ -11,6 +11,7 @@ const numbers = document.querySelectorAll(".number");
 const input = document.querySelector(".input");
 const operator = document.querySelectorAll(".operator");
 const logs = document.querySelector(".log");
+const backspace = document.querySelector(".backspace");
 
 let num1 = 0;
 let num2 = [];
@@ -18,7 +19,6 @@ let num2 = [];
 function inputNumber(buttonNumber) {
   num2.push(buttonNumber);
   input.textContent = num2.join("");
-  console.log(num2);
 }
 
 for (let i = 0; i < numbers.length; i++) {
@@ -112,4 +112,11 @@ clear.addEventListener("click", () => {
   dot.disabled = false;
   number.disabled = false;
   logs.textContent = "";
+});
+
+backspace.addEventListener("click", () => {
+  if (num2.length > 0) {
+    num2.pop();
+    input.textContent = num2.join("");
+  }
 });
