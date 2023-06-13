@@ -10,6 +10,7 @@ const number = document.querySelector(".number");
 const numbers = document.querySelectorAll(".number");
 const input = document.querySelector(".input");
 const operator = document.querySelectorAll(".operator");
+const logs = document.querySelector(".log");
 
 let num1 = 0;
 let num2 = [];
@@ -46,6 +47,8 @@ dot.addEventListener("click", function () {
 function floatCheck(numArray) {
   if (numArray.includes(".")) {
     return parseFloat(numArray.join(""));
+  } else if (numArray.length === 0) {
+    return 0;
   } else {
     return parseInt(numArray.join(""));
   }
@@ -91,11 +94,14 @@ for (let j = 0; j < operator.length; j++) {
       currentOperation = operator[j].textContent;
     }
     number.disabled = false;
+    logs.textContent = [num1, " ", currentOperation].join("");
   });
 }
 
 equals.addEventListener("click", () => {
+  logs.textContent = [num1, " ", currentOperation, " ", num2.join("")].join("");
   operate(currentOperation);
+  input.textContent = num1;
 });
 
 clear.addEventListener("click", () => {
@@ -105,4 +111,5 @@ clear.addEventListener("click", () => {
   firstOperation = true;
   dot.disabled = false;
   number.disabled = false;
+  logs.textContent = "";
 });
