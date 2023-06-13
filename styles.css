@@ -74,17 +74,24 @@ button:hover {
 .clear {
   grid-column-start: 1;
   grid-row-start: 1;
-  grid-column: span 2;
   color: #cc241d;
 }
 
+.backspace {
+  grid-column-start: 4;
+  grid-row-start: 1;
+  background-color: #cc241d;
+  color: #ebdbb2;
+  font-size: 5px;
+}
+
 .divide {
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-row-start: 1;
 }
 
 .multiply {
-  grid-column-start: 4;
+  grid-column-start: 3;
   grid-row-start: 1;
 }
 
