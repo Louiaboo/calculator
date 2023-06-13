@@ -71,6 +71,10 @@ button:hover {
   background-color: #3c3836;
 }
 
+.backspace:hover {
+  background-color: #fb4934;
+}
+
 .clear {
   grid-column-start: 1;
   grid-row-start: 1;
