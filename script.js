@@ -25,7 +25,12 @@ for (let i = 0; i < numbers.length; i++) {
     if (num2.length > 8) {
       number.disabled = true;
     } else {
-      inputNumber(parseInt(numbers[i].textContent));
+      if (num2[0] === 0 && num2.length === 1) {
+        num2.shift();
+        inputNumber(parseInt(numbers[i].textContent));
+      } else {
+        inputNumber(parseInt(numbers[i].textContent));
+      }
     }
   });
 }
